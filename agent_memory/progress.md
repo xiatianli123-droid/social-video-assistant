@@ -2,19 +2,19 @@
 
 ## Current Goal
 
-- 目标：美化共享社媒 brief 面板，让它具备黑绿艺术风格、流体流动背景和按钮绿色高光反馈。
-- 成功标准：`outputs/storyboard-brief-selector.html` 保留 6 个社媒创意组和原 brief 生成逻辑；界面使用暗黑 AI 视频平台风格、酸性绿高光、横幅 KV、绿色按钮高光；点击按钮有短暂绿色扫光反馈。
-- 范围边界：只修改共享 brief 面板视觉和必要项目记录；不改分镜工作流规则、不新增历史交付文件。
-- 停止条件：HTML 样式与交互完成，并通过静态断言、旧组选项残留检查和脚本语法检查。
-- 验证方式：PowerShell 检查 6 个创意组、视觉样式关键字、旧组残留；Node `--check` 检查页面脚本语法。
+- 目标：把 `H:\TVC` 收尾为可上传的 Git 项目，并移除不再使用的 `seedance-video` 项目 skill。
+- 成功标准：本地仓库已有初始提交；`.codex/skills/seedance-video/` 从工作区和 Git 跟踪中删除；项目记录说明当前工作流只保留分镜、HTML、首帧图三个职责；远程地址待用户提供后即可推送。
+- 范围边界：只处理 Git 打包、Seedance skill 退场和必要项目记录；不改分镜、首帧图、HTML 交付规则。
+- 停止条件：Git 状态可解释，删除结果和文档引用通过检索验证。
+- 验证方式：`git status --short --branch`、`rg seedance`、目录存在性检查。
 
 ## Status
 
-- 当前状态：社媒 brief 面板截图风格重塑已完成并通过验证。
-- 已完成：界面已改为暗黑 AI 视频平台风格，包含顶部导航、酸性绿高光、影视级液态 KV 横幅、硬边分类按钮和点击扫光反馈；brief 生成逻辑、6 个社媒创意组、平台/视频时长分离保持不变。
-- 下一步：后续遇到不完整社媒视频 brief 时，优先打开新版 brief 面板收集创意输入。
+- 当前状态：本地 Git 初始化与初始提交已完成；`seedance-video` 目录已删除；正在完成收尾验证。
+- 已完成：新增根 `.gitignore`，创建 `2c40cc6 Initial commit`；删除 `.codex/skills/seedance-video/`，包括未跟踪的 `.env.local` 本地密钥文件；更新 `docs/session-summaries.md` 记录该 skill 退场。
+- 下一步：用户提供远程仓库地址后，执行 `git remote add origin <url>` 和 `git push -u origin main`。
 
 ## Notes
 
-- 阶段变化：brief 面板从朴素表单升级为暗黑灵感广场式社媒创意控制台视觉。
-- 验证备注：本地 Playwright 包不可用，已改用静态断言、JS 语法检查和本地 HTML 打开预览。
+- 阶段变化：分镜和首帧图交付阶段结束；项目当前目标转为打包、交接和远程发布。
+- 当前有效 skill 集合：`short-video-storyboard`、`storyboard-html-delivery`、`storyboard-first-frame-images`；实际图片生成仍由全局 `aig-image-gen` 执行。

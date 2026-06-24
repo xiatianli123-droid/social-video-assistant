@@ -2,6 +2,19 @@
 
 This file stores dated workflow summaries for version management. When a project or workflow summary is generated in conversation, append or update the relevant dated section here.
 
+## 2026-06-24
+
+### Git Packaging And Skill Cleanup
+
+- Project directory: `H:\TVC`.
+- Key rule or asset changes:
+  - Initialized the workspace as a Git repository on `main` and created the initial project commit.
+  - Added a root `.gitignore` for local temporary files, caches, editor metadata, and environment secrets.
+  - Removed `.codex/skills/seedance-video/` because video-generation work is no longer part of this project; the active workflow ends after storyboard, HTML delivery, and optional first-frame image generation/review.
+  - Confirmed the project-local active skills remain `short-video-storyboard`, `storyboard-html-delivery`, and `storyboard-first-frame-images`.
+- Current output status: local repository is ready for a remote `origin`; no remote URL has been configured yet.
+- Next required step: create an empty remote repository, add it as `origin`, and push `main`.
+
 ## 2026-06-23
 
 ### Social Video Brief Panel
@@ -95,7 +108,7 @@ This file stores dated workflow summaries for version management. When a project
   - Added `scripts/seedance_task.py` to build payloads, create tasks, query/poll task IDs, and download output videos without hardcoding API keys.
   - Added automatic credential loading from `.env.local` or `ark_api_key.txt`, plus `.gitignore` and `.env.example` for one-time local setup.
 - Current output status: skill folder validates successfully; helper script syntax check and dry-run payload generation passed.
-- Next required step: use the skill on a real Seedance task after setting `ARK_API_KEY` with a rotated, non-exposed key.
+- Next required step: none. On 2026-06-24 this project retired the Seedance workflow and removed `.codex/skills/seedance-video/`; keep this entry only as historical context.
 
 ## 2026-06-04
 

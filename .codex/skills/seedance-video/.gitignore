@@ -1,5 +1,0 @@
-.env
-.env.local
-ark_api_key.txt
-*.key
-*.secret
