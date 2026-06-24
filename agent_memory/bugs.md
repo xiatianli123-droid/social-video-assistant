@@ -35,6 +35,8 @@
 - 已解决事项：2026-06-24 已移除 `short-video-storyboard` 中过时的“默认中文问卷”和模板“生成前提问卡”，brief 不完整时统一使用共享 brief 面板。
 - 已解决事项：2026-06-24 已把 Hook 审查细则从 `short-video-storyboard/SKILL.md` 拆到 `references/hook-review.md`；`SKILL.md` 只保留索引，并要求每次 Hook 审查或改写后追加新案例到该 reference。
 - 已解决事项：2026-06-24 已为 `references/hook-review.md` 增加案例库维护规则：超过 20 条整理、每类最多 3-5 条代表案例、重复经验提炼进规则、历史材料按需归档。
+- 已解决事项：2026-06-24 已将具体生活方式案例改为 `references/lifestyle-product-storyboard.md` 纯抽象生活方式产品分镜经验，只保留结构、证明方式和误用提醒。
+- 已解决事项：2026-06-24 已删除 `short-video-storyboard/references/storyboard-template.md` 中误放的 `AIG 首帧生成规则`，并清理 `shot-language.md` 中越界的首帧/AIG prompt 表述；首帧生成规则只归 `storyboard-first-frame-images`。
 - 已解决事项：本轮完成 9 份既有 storyboard.md 的钩子落实度审查；已将“四问不外显、只输出画面内容”的 hook 审查机制固化进 short-video-storyboard skill。
 - 已解决事项：2026-06-23 已把首帧图默认开启子 agent 视觉 QA、产品参考存在时才做产品跨分镜大小比例和参考图结构一致性审查、无产品参考时只审首帧规则、候选先审后替换、局部失败优先 edit、交付目录清理失败候选的方法同步进 `storyboard-first-frame-images` 和 `docs/storyboard-workflow.md`。
 - 已解决事项：2026-06-23 已把共享 brief 面板从偏运营项重构为社媒创意导向，新增开头钩子、内容结构、留存节奏、转场技巧、拍摄技巧、声音与包装，并要求 brief 先给社媒创意建议再写分镜，降低后续输入只停留在类目/受众/情绪标签的风险。

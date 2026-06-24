@@ -4,6 +4,17 @@ This file stores dated workflow summaries for version management. When a project
 
 ## 2026-06-24
 
+### World Cup Downlight Storyboard
+
+- Project directory: `outputs/2026-06-24-world-cup-downlight/`.
+- Key rule or asset changes:
+  - Created a 15-second TikTok/Reels storyboard for a World Cup living-room viewing scenario using a generic downlight product assumption.
+  - Used Match Cut from the TV football highlight circle to the circular downlight face, then used forward-continuity transitions from button press to lighting result and from clear viewing to goal celebration.
+  - Included social creative suggestions, `故事核心`, creative direction, per-shot blocks with cumulative time ranges, and design analysis.
+  - Created a no-image `storyboard.html` delivery page; no first-frame images were generated.
+- Current output status: `storyboard.md` and `storyboard.html` exist in the project folder.
+- Next required step: wait for the user's confirmation choice: `需要生成首帧图 / 暂不生成首帧图 / 先修改分镜再决定`.
+
 ### Storyboard Skill Format Hardening
 
 - Project directory: `H:\TVC`.
@@ -15,6 +26,8 @@ This file stores dated workflow summaries for version management. When a project
   - Removed the outdated Chinese six-question intake block from `short-video-storyboard` and its template reference. Incomplete briefs now route only through `outputs/storyboard-brief-selector.html` unless the user explicitly asks to use defaults.
   - Split the detailed Hook review mechanism out of `SKILL.md` into `references/hook-review.md`; `SKILL.md` now only indexes the reference and requires each completed Hook review/rewrite to append a compact new case to that reference file.
   - Added maintenance rules to `references/hook-review.md`: organize once `新增案例库` exceeds 20 entries, keep only 3-5 representative cases per Hook problem type, promote repeated lessons into rules, and archive old history only when needed.
+  - Replaced the concrete `references/case-pool-party-fan-light.md` with `references/lifestyle-product-storyboard.md`, an abstract lifestyle-product storyboard experience file that keeps reusable structures, proof methods, maintenance rules, and misuse warnings instead of a full project storyboard.
+  - Removed misplaced first-frame/AIG generation instructions from the storyboard skill template and shot-language reference; first-frame generation rules remain owned by `storyboard-first-frame-images`.
 - Current output status: `short-video-storyboard` validates successfully with the skill creator `quick_validate.py` script in UTF-8 mode.
 - Next required step: commit and push the skill hardening changes so collaborators receive the stricter format rules.
 

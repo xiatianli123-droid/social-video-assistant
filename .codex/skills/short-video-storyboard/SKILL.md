@@ -186,12 +186,11 @@ Hook 审查细则、评分规则和案例库已拆到 `references/hook-review.md
 - 分镜脚本：`outputs/YYYY-MM-DD-<project-name>/storyboard.md`
 - HTML 交付：`outputs/YYYY-MM-DD-<project-name>/storyboard.html`
 - 默认不创建：`prompts/`
-- 默认不展示：AIG image prompt
 
 ## 参考资料
 
 - 需要可复用分镜模板时，读取 `references/storyboard-template.md`。
-- 需要生活方式产品案例模板，尤其是庭院/泳池/派对、低噪、大风量和品牌调性场景时，读取 `references/case-pool-party-fan-light.md`，只复用结构和规则，不照抄具体台词或场景。
+- 需要生活方式产品分镜经验时，读取 `references/lifestyle-product-storyboard.md`，只复用抽象结构、证明方式和误用提醒，不套用具体场景或台词。
 - 需要 Hook 审查、开场改写或案例沉淀时，读取并更新 `references/hook-review.md`。
 - 需要镜头语言、景别、构图或情绪曲线时，读取 `references/shot-language.md`。
 - 需要 HTML 交付时，使用 `storyboard-html-delivery`。
