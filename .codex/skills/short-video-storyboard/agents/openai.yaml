@@ -1,0 +1,4 @@
+interface:
+  display_name: "Short Video Storyboard"
+  short_description: "Write storyboard scripts and HTML handoff."
+  default_prompt: "Write a short-video storyboard script, generate HTML delivery, then ask whether first-frame images are needed."

@@ -1,0 +1,341 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>灯串 15 秒短视频分镜</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --paper: #ffffff;
+      --text: #17202a;
+      --muted: #657080;
+      --line: #dce2e8;
+      --accent: #2364d2;
+      --warm: #b7791f;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    main {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 30px 0 46px;
+    }
+
+    header {
+      padding: 8px 0 22px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(26px, 4vw, 42px);
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    p {
+      margin: 0;
+      line-height: 1.72;
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    section {
+      margin-top: 26px;
+    }
+
+    .overview {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .item,
+    .shot-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .item {
+      padding: 14px;
+      min-height: 92px;
+    }
+
+    .label {
+      margin-bottom: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .value {
+      font-weight: 700;
+      line-height: 1.55;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 1080px;
+      border-collapse: collapse;
+      background: var(--paper);
+    }
+
+    th,
+    td {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    th {
+      color: #243244;
+      background: #eef2f6;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .frames {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .shot-card {
+      overflow: hidden;
+      background: var(--paper);
+    }
+
+    .shot-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      background: #e9edf2;
+    }
+
+    .shot-card .body {
+      padding: 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 4px 8px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+      color: var(--accent);
+      background: #eaf1ff;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .analysis {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .note {
+      padding: 14px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      line-height: 1.72;
+    }
+
+    .path {
+      color: var(--warm);
+      font-family: Consolas, "Courier New", monospace;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 780px) {
+      main {
+        width: min(100% - 20px, 680px);
+        padding-top: 20px;
+      }
+
+      .overview,
+      .frames,
+      .analysis {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>灯串 15 秒短视频分镜</h1>
+      <p class="sub">户外装饰灯串｜温暖生活方式｜庭院/阳台场景｜首帧图已生成</p>
+    </header>
+
+    <section>
+      <h2>创意方向</h2>
+      <div class="overview">
+        <div class="item">
+          <div class="label">核心卖点</div>
+          <div class="value">暖光氛围、安装简单、户外防水、适合聚会</div>
+        </div>
+        <div class="item">
+          <div class="label">目标受众</div>
+          <div class="value">家庭用户、阳台/庭院用户、露营与户外聚会人群</div>
+        </div>
+        <div class="item">
+          <div class="label">情绪曲线</div>
+          <div class="value">普通夜晚偏冷清 -> 一挂即亮 -> 空间变温暖 -> 把喜欢的夜晚留下</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>15 秒分镜</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>分镜</th>
+              <th>时长</th>
+              <th>景别</th>
+              <th>运镜</th>
+              <th>运镜逻辑</th>
+              <th>画面描述</th>
+              <th>文案旁白</th>
+              <th>音效配乐</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Shot 1</td>
+              <td>0-3秒</td>
+              <td>远景</td>
+              <td>缓慢推进</td>
+              <td>建立普通夜晚的冷清感，为点亮形成对比。</td>
+              <td>傍晚庭院略显昏暗，栏杆上挂着未亮起的灯串，桌椅和植物有轮廓但缺少氛围。</td>
+              <td>夜晚，不该只是变暗。</td>
+              <td>轻柔环境声，音乐低频铺底。</td>
+            </tr>
+            <tr>
+              <td>Shot 2</td>
+              <td>3-7秒</td>
+              <td>中近景</td>
+              <td>跟随手部推近</td>
+              <td>看到安装和点亮动作，降低使用门槛。</td>
+              <td>一只手把灯串顺着栏杆固定好，按下开关，暖黄色灯珠依次亮起。</td>
+              <td>一串暖光，点亮整个空间。</td>
+              <td>轻微开关声，灯光亮起音效。</td>
+            </tr>
+            <tr>
+              <td>Shot 3</td>
+              <td>7-11秒</td>
+              <td>中景</td>
+              <td>横向滑动</td>
+              <td>用人物体验证明氛围价值，而不是只展示产品。</td>
+              <td>朋友或家人围坐桌边交谈，饮品、餐盘和植物在暖光下更有质感，灯串在背景形成柔和光斑。</td>
+              <td>聚会、露营、阳台小夜晚，都刚刚好。</td>
+              <td>音乐变暖，加入轻笑声和杯子轻碰声。</td>
+            </tr>
+            <tr>
+              <td>Shot 4</td>
+              <td>11-15秒</td>
+              <td>特写转定格</td>
+              <td>从灯珠特写轻拉开</td>
+              <td>从氛围细节回到产品记忆，形成品牌收束。</td>
+              <td>暖光灯珠特写，背景延续庭院聚会的柔和光斑；镜头轻轻拉开，看到一段完整灯串和包装/品牌位，画面定格。</td>
+              <td>把喜欢的夜晚留下。</td>
+              <td>音乐收束，温暖尾音。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>首帧图</h2>
+      <div class="frames">
+        <article class="shot-card">
+          <img src="shot-01-before-light.png" alt="Shot 1 未点亮的庭院灯串">
+          <div class="body">
+            <div class="tag">Shot 1 / Before</div>
+            <h3>未点亮的傍晚庭院</h3>
+            <p>建立冷清夜晚和未亮灯串，为后续暖光转折做铺垫。</p>
+          </div>
+        </article>
+        <article class="shot-card">
+          <img src="shot-02-switch-on.png" alt="Shot 2 手部按下开关点亮灯串">
+          <div class="body">
+            <div class="tag">Shot 2 / Switch On</div>
+            <h3>安装与点亮动作</h3>
+            <p>手部动作让产品使用门槛变低，暖光出现是视觉转折点。</p>
+          </div>
+        </article>
+        <article class="shot-card">
+          <img src="shot-03-gathering.png" alt="Shot 3 暖光灯串下的庭院聚会">
+          <div class="body">
+            <div class="tag">Shot 3 / Experience</div>
+            <h3>暖光下的聚会体验</h3>
+            <p>用人物互动证明灯串带来的空间氛围和情绪价值。</p>
+          </div>
+        </article>
+        <article class="shot-card">
+          <img src="shot-04-brand-closeup.png" alt="Shot 4 暖光灯珠和品牌收束特写">
+          <div class="body">
+            <div class="tag">Shot 4 / Brand</div>
+            <h3>暖光品牌收束</h3>
+            <p>用灯珠细节、柔和光斑和包装/品牌位，把氛围价值收回到产品记忆。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>设计解析</h2>
+      <div class="analysis">
+        <div class="note">景别从远景到中近景、中景、特写，逐步从环境、动作、体验推进到功能信任。</div>
+        <div class="note">首帧连续性依赖同一庭院空间、同一暖白灯串、同一傍晚到夜晚的时间推进。</div>
+        <div class="note">卖点尽量用画面证明：点亮动作证明易用，聚会氛围证明价值，结尾产品定格强化品牌记忆。</div>
+        <div class="note">本地文件目录：<span class="path">outputs/2026-05-14-string-lights/</span></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+

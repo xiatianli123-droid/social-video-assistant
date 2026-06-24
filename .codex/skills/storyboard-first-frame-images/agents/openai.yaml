@@ -1,0 +1,4 @@
+interface:
+  display_name: "Storyboard First Frames"
+  short_description: "Generate reference-guided storyboard first frames."
+  default_prompt: "Generate the character reference sheet, scene concept reference, and then each storyboard first-frame image using only those two reference images while preserving people and scene continuity through prompt text."

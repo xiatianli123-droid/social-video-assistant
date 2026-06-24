@@ -1,0 +1,4 @@
+interface:
+  display_name: "Storyboard HTML Delivery"
+  short_description: "Create storyboard HTML delivery pages."
+  default_prompt: "Create or update storyboard.html for this storyboard project, with or without first-frame images."

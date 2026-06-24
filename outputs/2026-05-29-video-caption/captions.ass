@@ -1,0 +1,18 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 720
+PlayResY: 1280
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,52,&H00FFFFFF,&H000000FF,&HAA000000,&H88000000,-1,0,0,0,100,100,0,0,1,4,1,2,48,48,118,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:02.50,Default,,0,0,0,,Tiny things love the dark.
+Dialogue: 0,0:00:02.50,0:00:05.50,Default,,0,0,0,,Then one quiet circle finds them.
+Dialogue: 0,0:00:05.50,0:00:09.00,Default,,0,0,0,,The room does not get louder.\NIt gets clearer.
+Dialogue: 0,0:00:09.00,0:00:10.50,Default,,0,0,0,,Found it.
+Dialogue: 0,0:00:10.50,0:00:12.00,Default,,0,0,0,,Perfect timing.
+Dialogue: 0,0:00:12.00,0:00:15.07,Default,,0,0,0,,You notice the room.\NThen you notice why.

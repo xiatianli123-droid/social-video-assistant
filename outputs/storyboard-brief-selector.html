@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>社媒短视频创意 Brief</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #050505;
+      --panel: #0d0d0f;
+      --panel-strong: #09090a;
+      --text: #f6fff2;
+      --muted: #8c928a;
+      --line: rgba(198, 255, 0, 0.22);
+      --active: #cfff00;
+      --active-deep: #6eff00;
+      --active-soft: rgba(207, 255, 0, 0.12);
+      --shadow: 0 24px 64px rgba(0, 0, 0, 0.62);
+      --glow: 0 0 28px rgba(207, 255, 0, 0.32);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 8% 18%, rgba(207, 255, 0, 0.08), transparent 22%),
+        linear-gradient(180deg, #000 0%, #080808 38%, #050505 100%),
+        var(--bg);
+      color: var(--text);
+      position: relative;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: -22vmax;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::before {
+      background:
+        conic-gradient(from 130deg at 46% 28%, transparent 0deg, rgba(207, 255, 0, 0.2) 28deg, transparent 72deg, rgba(0, 148, 118, 0.22) 136deg, transparent 216deg, rgba(255, 102, 40, 0.12) 282deg, transparent 360deg);
+      filter: blur(72px) saturate(1.35);
+      opacity: 0.56;
+      animation: fluid-drift 20s ease-in-out infinite alternate;
+      transform-origin: 48% 50%;
+    }
+
+    body::after {
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 96px 96px;
+      opacity: 0.11;
+    }
+
+    @keyframes fluid-drift {
+      0% { transform: translate3d(-3%, -2%, 0) rotate(-8deg) scale(1.02); }
+      50% { transform: translate3d(4%, 2%, 0) rotate(7deg) scale(1.08); }
+      100% { transform: translate3d(-1%, 5%, 0) rotate(14deg) scale(1.04); }
+    }
+
+    .topbar {
+      min-height: 58px;
+      padding: 0 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      background: rgba(0, 0, 0, 0.94);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.42);
+    }
+
+    .brand {
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 0;
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    .brand span { color: var(--active); }
+
+    .nav-links,
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .nav-links a,
+    .top-actions span {
+      color: #b7b7b7;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-links a:first-child,
+    .top-actions .credit {
+      color: var(--active);
+    }
+
+    main {
+      width: min(1560px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 0 0 46px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      min-height: 238px;
+      display: grid;
+      align-items: center;
+      margin: 0 -24px 26px;
+      padding: 42px min(7vw, 104px);
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      background:
+        radial-gradient(circle at 18% 44%, rgba(22, 92, 104, 0.72), transparent 24%),
+        radial-gradient(circle at 58% 34%, rgba(207, 255, 0, 0.22), transparent 22%),
+        radial-gradient(circle at 76% 42%, rgba(199, 86, 42, 0.35), transparent 30%),
+        linear-gradient(95deg, #050505 0%, #111 45%, #040404 100%);
+    }
+
+    header::before,
+    header::after {
+      content: "";
+      position: absolute;
+      inset: -42%;
+      pointer-events: none;
+    }
+
+    header::before {
+      background:
+        conic-gradient(from 20deg at 50% 50%, transparent 0deg, rgba(202, 255, 0, 0.38) 26deg, transparent 63deg, rgba(0, 156, 158, 0.28) 132deg, rgba(255, 116, 54, 0.22) 192deg, transparent 250deg, rgba(255, 255, 255, 0.14) 324deg, transparent 360deg);
+      filter: blur(38px) contrast(1.25);
+      opacity: 0.84;
+      animation: hero-flow 14s ease-in-out infinite alternate;
+    }
+
+    header::after {
+      background:
+        radial-gradient(circle, rgba(255, 255, 255, 0.28) 0 1px, transparent 1px 100%),
+        linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.78) 78%);
+      background-size: 16px 16px, auto;
+      opacity: 0.18;
+      mix-blend-mode: screen;
+    }
+
+    @keyframes hero-flow {
+      from { transform: translate3d(-3%, -4%, 0) rotate(-8deg) scale(1.02); }
+      to { transform: translate3d(5%, 3%, 0) rotate(10deg) scale(1.08); }
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 980px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(50px, 7vw, 108px);
+      line-height: 1.04;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-shadow: 0 0 38px rgba(207, 255, 0, 0.12);
+      background: linear-gradient(90deg, #fffde8 0%, #e9f0c2 50%, #ffffff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .kicker {
+      margin-bottom: 8px;
+      color: var(--active);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .sub {
+      margin: 0;
+      color: #f4f4f4;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.7;
+      max-width: 920px;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.74);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.28fr) minmax(360px, 0.72fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .panel {
+      background: rgba(9, 9, 10, 0.94);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background:
+        linear-gradient(135deg, rgba(207, 255, 0, 0.11), transparent 34%),
+        linear-gradient(315deg, rgba(28, 28, 28, 0.42), transparent 42%);
+      opacity: 1;
+    }
+
+    .form {
+      padding: 22px;
+    }
+
+    .group {
+      position: relative;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 1;
+    }
+
+    .group:first-child { padding-top: 0; }
+    .group:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    .label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.35;
+      color: #effff6;
+      font-weight: 800;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+      border: 1px solid rgba(207, 255, 0, 0.22);
+      border-radius: 0;
+      padding: 4px 8px;
+      background: rgba(207, 255, 0, 0.06);
+    }
+
+    .choices {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    button,
+    textarea,
+    input {
+      font: inherit;
+    }
+
+    .choice {
+      min-height: 38px;
+      padding: 8px 13px;
+      border: 1px solid rgba(207, 255, 0, 0.44);
+      border-radius: 0;
+      background: #080808;
+      color: #d7d7d2;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .choice::after {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      background: linear-gradient(90deg, transparent, rgba(207, 255, 0, 0.5), transparent);
+      opacity: 0;
+      transform: translateX(-80%);
+      transition: opacity 0.18s ease;
+    }
+
+    .choice:hover {
+      border-color: rgba(207, 255, 0, 0.86);
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 0 18px rgba(207, 255, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    }
+
+    .choice.active {
+      color: #050500;
+      border-color: var(--active);
+      background: var(--active);
+      font-weight: 700;
+      box-shadow: 0 0 0 1px rgba(207, 255, 0, 0.22), 0 0 24px rgba(207, 255, 0, 0.28);
+    }
+
+    .choice.active::after,
+    .choice.flash::after {
+      opacity: 1;
+      animation: green-sweep 0.7s ease;
+    }
+
+    @keyframes green-sweep {
+      from { transform: translateX(-95%); }
+      to { transform: translateX(95%); }
+    }
+
+    .field,
+    .custom {
+      width: 100%;
+      margin-top: 10px;
+      min-height: 38px;
+      border: 1px solid rgba(207, 255, 0, 0.24);
+      border-radius: 0;
+      padding: 9px 11px;
+      outline: none;
+      background: rgba(2, 8, 6, 0.58);
+      color: var(--text);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    .field::placeholder,
+    .custom::placeholder {
+      color: rgba(230, 232, 206, 0.48);
+    }
+
+    .field:first-child { margin-top: 0; }
+
+    .field:focus,
+    .custom:focus,
+    textarea:focus {
+      border-color: var(--active);
+      box-shadow: 0 0 0 3px var(--active-soft), var(--glow);
+    }
+
+    .output {
+      position: sticky;
+      top: 18px;
+      padding: 18px;
+      background: var(--panel-strong);
+    }
+
+    .output h2 {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      min-height: 500px;
+      resize: vertical;
+      border: 1px solid rgba(207, 255, 0, 0.28);
+      border-radius: 0;
+      padding: 12px;
+      line-height: 1.65;
+      color: var(--text);
+      background: rgba(1, 7, 5, 0.76);
+      outline: none;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.28);
+    }
+
+    .actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .primary,
+    .secondary {
+      min-height: 40px;
+      border-radius: 0;
+      padding: 9px 14px;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .primary {
+      border: 1px solid var(--active);
+      background: var(--active);
+      color: #050500;
+      font-weight: 700;
+      box-shadow: 0 0 24px rgba(207, 255, 0, 0.28);
+    }
+
+    .secondary {
+      border: 1px solid rgba(207, 255, 0, 0.26);
+      background: rgba(255, 255, 255, 0.05);
+      color: #def8ea;
+    }
+
+    .primary:hover,
+    .secondary:hover {
+      transform: translateY(-1px);
+      border-color: rgba(207, 255, 0, 0.82);
+      box-shadow: 0 0 24px rgba(207, 255, 0, 0.22);
+    }
+
+    .status {
+      position: relative;
+      z-index: 1;
+      min-height: 22px;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        width: min(100% - 20px, 720px);
+        padding-top: 18px;
+      }
+
+      header { display: block; }
+      .topbar { padding: 0 16px; }
+      .nav-links { display: none; }
+      .layout { grid-template-columns: 1fr; }
+      .output { position: static; }
+      textarea { min-height: 360px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="topbar" aria-label="主导航">
+    <div class="brand">Brief<span>.ai</span></div>
+    <div class="nav-links">
+      <a href="#">灵感基地</a>
+      <a href="#">我的项目</a>
+      <a href="#">团队项目</a>
+      <a href="#">灵感库</a>
+    </div>
+    <div class="top-actions">
+      <span>R</span>
+      <span>✦</span>
+      <span class="credit">$ 2.194</span>
+      <span>充值</span>
+    </div>
+  </nav>
+  <main>
+    <header>
+      <div class="hero-copy">
+        <div class="kicker">SOCIAL VIDEO CREATIVE ENGINE</div>
+        <h1>社媒短视频创意 Brief</h1>
+        <p class="sub">先选内容钩子、节奏、转场和拍摄技巧，再生成适合 Shorts / TikTok / Reels 的分镜简报。</p>
+      </div>
+    </header>
+
+    <div class="layout">
+      <section class="panel form" aria-label="选项">
+        <div class="group" data-key="基础信息" data-mode="fields">
+          <div class="label-row">
+            <h2>基础信息</h2>
+            <span class="hint">建议填写</span>
+          </div>
+          <input class="field" data-label="产品名称" placeholder="产品名称，例如：户外灯串 / 排气扇 / 便携榨汁机">
+          <input class="field" data-label="品牌名" placeholder="品牌名，可不填">
+          <input class="field" data-label="一句话方向" placeholder="一句话方向，例如：把普通夜晚变成温暖聚会场景">
+        </div>
+
+        <div class="group" data-key="核心卖点" data-mode="multi">
+          <div class="label-row">
+            <h2>核心卖点</h2>
+            <span class="hint">可多选</span>
+          </div>
+          <div class="choices">
+            <button class="choice" type="button">高亮/高性能</button>
+            <button class="choice" type="button">安静低噪</button>
+            <button class="choice" type="button">防水防潮</button>
+            <button class="choice" type="button">省电节能</button>
+            <button class="choice" type="button">易安装</button>
+            <button class="choice" type="button">易清洁</button>
+            <button class="choice" type="button">安全保护</button>
+            <button class="choice" type="button">智能控制</button>
+            <button class="choice" type="button">多模式</button>
+            <button class="choice" type="button">长续航</button>
+            <button class="choice" type="button">耐用材质</button>
+            <button class="choice" type="button">便携轻巧</button>
+            <button class="choice" type="button">大容量</button>
+            <button class="choice" type="button">快速见效</button>
+            <button class="choice" type="button">舒适亲肤</button>
+            <button class="choice" type="button">适合送礼</button>
+          </div>
+          <input class="custom" placeholder="其他卖点，可不填">
+        </div>
+
+        <div class="group" data-key="场景" data-mode="multi">
+          <div class="label-row">
+            <h2>场景</h2>
+            <span class="hint">可多选</span>
+          </div>
+          <div class="choices">
+            <button class="choice" type="button">客厅</button>
+            <button class="choice" type="button">厨房</button>
+            <button class="choice" type="button">浴室</button>
+            <button class="choice" type="button">卧室</button>
+            <button class="choice" type="button">阳台</button>
+            <button class="choice" type="button">庭院</button>
+            <button class="choice" type="button">车内</button>
+            <button class="choice" type="button">办公室</button>
+            <button class="choice" type="button">健身房</button>
+            <button class="choice" type="button">露营地</button>
+            <button class="choice" type="button">商店货架</button>
+            <button class="choice" type="button">工厂/车间</button>
+            <button class="choice" type="button">纯产品棚拍</button>
+            <button class="choice" type="button">节日派对</button>
+            <button class="choice" type="button">礼品开箱</button>
+          </div>
+          <input class="custom" placeholder="其他场景，可不填">
+        </div>
+
+        <div class="group" data-key="开头钩子" data-mode="multi">
+          <div class="label-row">
+            <h2>开头钩子</h2>
+            <span class="hint">可多选</span>
+          </div>
+          <div class="choices">
+            <button class="choice active" type="button">结果先行</button>
+            <button class="choice" type="button">强反差前后对比</button>
+            <button class="choice" type="button">异常画面开场</button>
+            <button class="choice" type="button">问题瞬间</button>
+            <button class="choice" type="button">悬念留白</button>
+            <button class="choice" type="button">误会/反转</button>
+            <button class="choice" type="button">热点借势</button>
+            <button class="choice" type="button">人物强反应</button>
+            <button class="choice" type="button">细节特写开场</button>
+            <button class="choice" type="button">挑战/测试开场</button>
+            <button class="choice" type="button">发现式开场</button>
+            <button class="choice" type="button">FOMO/限时感</button>
+          </div>
+          <input class="custom" placeholder="其他钩子，可不填">
+        </div>
+
+        <div class="group" data-key="内容结构" data-mode="multi">
+          <div class="label-row">
+            <h2>内容结构</h2>
+            <span class="hint">可多选</span>
+          </div>
+          <div class="choices">
+            <button class="choice" type="button">Hook-Proof-Payoff</button>
+            <button class="choice active" type="button">痛点-触发-结果-记忆</button>
+            <button class="choice" type="button">Before/After</button>
+            <button class="choice" type="button">测试实验</button>
+            <button class="choice" type="button">POV体验</button>
+            <button class="choice" type="button">UGC真实推荐</button>
+            <button class="choice" type="button">清单式/步骤式</button>
+            <button class="choice" type="button">误区纠正</button>
+            <button class="choice" type="button">小剧情反转</button>
+            <button class="choice" type="button">ASMR/纯视觉体验</button>
+            <button class="choice" type="button">开箱到使用</button>
+            <button class="choice" type="button">场景问题解决</button>
+          </div>
+          <input class="custom" placeholder="其他内容结构，可不填">
+        </div>
+
+        <div class="group" data-key="留存节奏" data-mode="multi">
+          <div class="label-row">
+            <h2>留存节奏</h2>
+            <span class="hint">可多选</span>
+          </div>
+          <div class="choices">
+            <button class="choice" type="button">1.5秒强钩子</button>
+            <button class="choice active" type="button">3秒内看到结果</button>
+            <button class="choice" type="button">快切高密度</button>
+            <button class="choice active" type="button">每镜一个新信息</button>
+            <button class="choice" type="button">结果前置再解释</button>
+            <button class="choice" type="button">视觉变化递进</button>
+            <button class="choice" type="button">反复制造小悬念</button>
+            <button class="choice" type="button">少走位多结果瞬间</button>
+            <button class="choice" type="button">最后一秒产品记忆</button>
+            <button class="choice" type="button">循环结尾/可无缝重播</button>
+          </div>
+          <input class="custom" placeholder="其他节奏要求，可不填">
+        </div>
+
+        <div class="group" data-key="转场技巧" data-mode="multi">
+          <div class="label-row">
+            <h2>转场技巧</h2>
+            <span class="hint">可多选</span>
+          </div>
+          <div class="choices">
+            <button class="choice" type="button">遮挡转场</button>
+            <button class="choice active" type="button">Match Cut</button>
+            <button class="choice active" type="button">前后承接转场</button>
+            <button class="choice" type="button">隐藏剪辑</button>
+            <button class="choice" type="button">溶解转场</button>
+            <button class="choice" type="button">空镜转场</button>
+            <button class="choice" type="button">动作接动作</button>
+            <button class="choice" type="button">光色匹配</button>
+            <button class="choice" type="button">形状匹配</button>
+            <button class="choice" type="button">声音桥接</button>
+            <button class="choice" type="button">镜头甩动</button>
+            <button class="choice" type="button">产品状态变化转场</button>
+          </div>
+          <input class="custom" placeholder="其他转场技巧，可不填">
+        </div>
+
+        <div class="group" data-key="拍摄技巧" data-mode="multi">
+          <div class="label-row">
+            <h2>拍摄技巧</h2>
+            <span class="hint">可多选</span>
+          </div>
+          <div class="choices">
+            <button class="choice active" type="button">手部操作特写</button>
+            <button class="choice" type="button">POV第一视角</button>
+            <button class="choice" type="button">低机位英雄镜头</button>
+            <button class="choice" type="button">推近产品细节</button>
+            <button class="choice" type="button">拉远展示场景结果</button>
+            <button class="choice" type="button">环绕/旋转展示</button>
+            <button class="choice" type="button">俯拍过程</button>
+            <button class="choice" type="button">微距质感</button>
+            <button class="choice" type="button">前景遮挡制造层次</button>
+            <button class="choice" type="button">人物反应切镜</button>
+            <button class="choice" type="button">环境变化证明卖点</button>
+            <button class="choice" type="button">道具触发卖点</button>
+          </div>
+          <input class="custom" placeholder="其他拍摄技巧，可不填">
+        </div>
+
+        <div class="group" data-key="声音与包装" data-mode="multi">
+          <div class="label-row">
+            <h2>声音与包装</h2>
+            <span class="hint">可多选</span>
+          </div>
+          <div class="choices">
+            <button class="choice" type="button">环境声主导</button>
+            <button class="choice" type="button">ASMR细节声</button>
+            <button class="choice active" type="button">轻旁白</button>
+            <button class="choice" type="button">人物对白</button>
+            <button class="choice" type="button">节奏点卡拍</button>
+            <button class="choice" type="button">声音桥接转场</button>
+            <button class="choice" type="button">字幕辅助</button>
+            <button class="choice" type="button">屏幕大字钩子</button>
+            <button class="choice" type="button">CTA轻提示</button>
+            <button class="choice" type="button">循环结尾音效</button>
+          </div>
+          <input class="custom" placeholder="其他声音或包装要求，可不填">
+        </div>
+
+        <div class="group" data-key="平台" data-mode="single">
+          <div class="label-row">
+            <h2>平台</h2>
+            <span class="hint">单选</span>
+          </div>
+          <div class="choices">
+            <button class="choice active" type="button">YouTube Shorts</button>
+            <button class="choice" type="button">TikTok/Reels</button>
+            <button class="choice" type="button">Amazon</button>
+            <button class="choice" type="button">YouTube</button>
+            <button class="choice" type="button">TVC</button>
+            <button class="choice" type="button">商品详情页动效脚本</button>
+          </div>
+          <input class="custom" placeholder="其他平台，可不填">
+        </div>
+
+        <div class="group" data-key="视频时长" data-mode="single">
+          <div class="label-row">
+            <h2>视频时长</h2>
+            <span class="hint">单选</span>
+          </div>
+          <div class="choices">
+            <button class="choice active" type="button">15秒</button>
+            <button class="choice" type="button">20秒</button>
+            <button class="choice" type="button">30秒</button>
+            <button class="choice" type="button">60秒</button>
+          </div>
+          <input class="custom" placeholder="其他时长，可不填">
+        </div>
+
+      </section>
+
+      <aside class="panel output" aria-label="生成结果">
+        <h2>生成的简报</h2>
+        <textarea id="brief" readonly></textarea>
+        <div class="actions">
+          <button class="primary" id="copy" type="button">复制简报</button>
+          <button class="secondary" id="download" type="button">下载TXT</button>
+          <button class="secondary" id="reset" type="button">恢复默认</button>
+        </div>
+        <div class="status" id="status"></div>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    const groups = Array.from(document.querySelectorAll(".group"));
+    const brief = document.querySelector("#brief");
+    const status = document.querySelector("#status");
+
+    function selectedValues(group) {
+      if (group.dataset.mode === "fields") {
+        return Array.from(group.querySelectorAll(".field"))
+          .map((input) => `${input.dataset.label}: ${input.value.trim() || "未填写"}`);
+      }
+
+      const values = Array.from(group.querySelectorAll(".choice.active"))
+        .map((button) => button.textContent.trim());
+      const custom = group.querySelector(".custom").value.trim();
+      if (custom) values.push(custom);
+      return values;
+    }
+
+    function updateBrief() {
+      const lines = ["帮我写一个产品短视频分镜脚本。", ""];
+
+      groups.forEach((group) => {
+        const key = group.dataset.key;
+        const values = selectedValues(group);
+
+        if (group.dataset.mode === "fields") {
+          lines.push(`${key}:`);
+          values.forEach((value) => lines.push(`- ${value}`));
+        } else {
+          lines.push(`${key}: ${values.length ? values.join(" / ") : "未选择"}`);
+        }
+      });
+
+      lines.push(
+        "",
+        "要求: 先给社媒创意建议，再输出中文分镜。",
+        "社媒创意建议必须包含: 内容钩子建议、留存节奏建议、转场建议、拍摄剪辑建议。",
+        "转场建议必须说明转场类型、前后镜头共享视觉锚点和叙事目的，不要只写丝滑或无缝。",
+        "分镜需包含故事核心、创意方向、逐镜头块、设计解析。分镜正文不要用宽 Markdown 表格。",
+        "每个镜头按固定字段写: 镜头 N、时长、景别、运镜、运镜逻辑、画面描述、文案旁白、音效配乐。",
+        "时长必须写累计时间段，例如 0-2.5秒、2.5-5秒、5-8秒；不要写成单镜时长。",
+        "文案旁白默认使用英文；如有旁白或人物对话，请在同一字段写清音色，并保持同一旁白或同一人物说话音色一致。",
+        "文案旁白默认只写旁白或人物对话，不写屏幕文案；用户明确要求屏显文字/字幕时才加入。",
+        "音效配乐保持单字段，根据画面主体需要写几个类别就写几个，尽量精简；全景偏环境声，人物对话写人声，动作或道具成为主体时写动作音效/道具声，BGM只在服务情绪或节奏时加入。",
+        "镜头时长按广告功能、信息量和平台节奏灵活分配；不要为了凑镜头时长而填充无效动作。",
+        "每个镜头要有不同任务，不要只做产品美图。"
+      );
+
+      brief.value = lines.join("\n");
+    }
+
+    groups.forEach((group) => {
+      group.querySelectorAll(".choice").forEach((button) => {
+        button.addEventListener("click", () => {
+          if (group.dataset.mode === "single") {
+            group.querySelectorAll(".choice").forEach((item) => item.classList.remove("active"));
+          }
+          button.classList.toggle("active");
+          button.classList.remove("flash");
+          void button.offsetWidth;
+          button.classList.add("flash");
+          updateBrief();
+        });
+      });
+
+      group.querySelectorAll(".custom, .field").forEach((input) => {
+        input.addEventListener("input", updateBrief);
+      });
+    });
+
+    document.querySelector("#copy").addEventListener("click", async () => {
+      brief.select();
+      try {
+        await navigator.clipboard.writeText(brief.value);
+        status.textContent = "已复制，可以直接发给 Codex。";
+      } catch {
+        document.execCommand("copy");
+        status.textContent = "已选中并复制。";
+      }
+    });
+
+    document.querySelector("#download").addEventListener("click", () => {
+      const blob = new Blob([brief.value], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "storyboard-brief.txt";
+      link.click();
+      URL.revokeObjectURL(url);
+      status.textContent = "已生成TXT下载。";
+    });
+
+    document.querySelector("#reset").addEventListener("click", () => {
+      location.reload();
+    });
+
+    updateBrief();
+  </script>
+</body>
+</html>

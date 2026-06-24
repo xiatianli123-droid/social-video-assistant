@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>夏日空海极速 23 秒横版视频分镜</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172033;
+      --muted: #5d697a;
+      --line: #d7e0ea;
+      --panel: #ffffff;
+      --sea: #087986;
+      --sky: #e9f4ff;
+      --sand: #f8f0df;
+      --heat: #f26042;
+      --game: #274060;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, #e8f4ff 0%, #e7f8f7 34%, var(--sand) 78%, #fff9ef 100%);
+      line-height: 1.65;
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px 20px 52px;
+    }
+
+    header { padding: 24px 0 12px; }
+    h1, h2 { margin: 0; letter-spacing: 0; }
+    h1 { font-size: clamp(28px, 4vw, 46px); line-height: 1.15; }
+    h2 { font-size: 24px; margin-bottom: 12px; }
+    section { margin-top: 28px; }
+
+    .analysis,
+    .overview {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .story-core {
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--heat);
+      background: rgba(255, 246, 239, 0.94);
+      border-radius: 0 8px 8px 0;
+      font-weight: 700;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .meta li {
+      min-height: 64px;
+      padding: 12px;
+      background: #f8fbfc;
+      border: 1px solid #e5edf4;
+      border-radius: 8px;
+    }
+
+    .label {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 1180px;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #e6edf3;
+      vertical-align: top;
+      text-align: left;
+      overflow-wrap: anywhere;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #dff0ef;
+      color: #12333a;
+      white-space: nowrap;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+    .shot { width: 78px; font-weight: 700; color: var(--sea); }
+    .time { width: 92px; font-weight: 700; }
+    .narrow { width: 130px; }
+    .wide { width: 250px; }
+    .hook { background: #fff3ed; }
+    .sky-row { background: #f0f7ff; }
+    .transition-row { background: #fffaf0; }
+    .highlight { background: #f2fbfa; }
+    .finish { background: #fff8e9; }
+
+    .analysis ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .analysis li + li { margin-top: 8px; }
+
+    .frames {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .frame-card {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .frame-card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: block;
+      object-fit: cover;
+      background: #dfe7ef;
+    }
+
+    .frame-body {
+      padding: 12px 14px 14px;
+    }
+
+    .frame-body h3 {
+      margin: 0 0 6px;
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .frame-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tagline {
+      margin-top: 10px;
+      color: var(--game);
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 720px) {
+      main { padding: 22px 14px 40px; }
+      .analysis, .overview { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>夏日空海极速 23 秒横版视频分镜</h1>
+      <div class="story-core">故事核心：前 2 秒直接把观众推到飞机舱门外：主角半个身体已经冲出舱门，海岸线在脚下像游戏地图一样翻转拉伸，形成强 hook；随后自由落体以超广角追随镜头冲进云层，第三镜用 AI 极限运动式的超现实运动逻辑，把云雾白场无缝接成冲浪板 POV、完整冲浪过程和巨浪冲出；主角抱板从海水走上沙滩，手机铃声自然接入现实，反转他其实是设计师，被催“图片怎么还没做好”，最后他放下手机，背对镜头在夕阳、海水和沙滩前继续干活。</div>
+    </header>
+
+    <section class="overview">
+      <h2>创意方向</h2>
+      <ul class="meta">
+        <li><span class="label">产品 / 品牌</span>无品牌植入，纯运动影像</li>
+        <li><span class="label">目标受众</span>喜欢夏天、极限运动、跳伞、冲浪、速度感、AI 动画和高能生活方式内容的年轻观众</li>
+        <li><span class="label">核心看点</span>前 2 秒强 hook；先跳伞后冲浪；云层到浪花的无缝转场；巨浪袭来的高速冲浪段；结尾反转主角是正在被催图的设计师</li>
+        <li><span class="label">视频风格</span>AI 极限运动动画、游戏电影感航拍、第三人称追随镜头和第一人称 POV 混剪</li>
+        <li><span class="label">视觉质感</span>高饱和海岸色彩、超广角畸变、边缘运动模糊、地形纵深压迫、超现实但连贯的运动逻辑</li>
+        <li><span class="label">目标情绪</span>失重、冲刺、爆发、压迫、释放、夏日燃点，最后落到现实里的轻喜剧反转</li>
+        <li><span class="label">场景设定</span>前 1-3 镜是晴朗午后的高通透蓝天和蓝绿色海岸；第 4-5 镜走上沙滩后才进入金色傍晚</li>
+        <li><span class="label">平台 / 时长</span>横版运动短片通用平台，约23秒</li>
+        <li><span class="label">画幅比例</span>横版 16:9</li>
+      </ul>
+      <p class="tagline">风格锚点：真实海岸风景 + 不可能运动轨迹 + 游戏式追随镜头 + AI 动画速度爽感。</p>
+    </section>
+
+    <section>
+      <h2>分镜表</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="shot">镜头</th>
+              <th class="time">时长</th>
+              <th class="narrow">景别</th>
+              <th class="narrow">运镜</th>
+              <th class="wide">运镜逻辑</th>
+              <th class="wide">画面描述</th>
+              <th class="wide">文案旁白</th>
+              <th class="wide">音效配乐</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hook">
+              <td class="shot">镜头 1</td>
+              <td class="time">0-2秒</td>
+              <td>机舱边缘第一人称近景到超广角高空翻转远景</td>
+              <td>手持/头盔 POV 从舱门边缘猛冲出去，镜头贴着主角肩侧翻出飞机；画面边缘出现强烈广角拉伸，海岸线像游戏地图一样在脚下快速倒转</td>
+              <td>前 2 秒必须是强 hook。第一帧已经在动作中，不解释人物，不铺垫环境，用“身体离开飞机”“海岸线翻转”和“地形纵深突然打开”立刻抓住注意力</td>
+              <td>画面一开始就是主角半个身体已经探出飞机舱门，手套从金属舱门边缘松开。强风把袖口、绑带和护目镜带吹得剧烈抖动，下一瞬镜头跟着主角翻出飞机，飞机机腹从画面上方掠走。超广角把蓝色天空、白色云带、蓝绿色海面和弯曲海岸线同时拉进画面，边缘树影与海岸细节形成速度拖影，像开放世界极限运动游戏刚切入高速关卡。远处白色浪线一闪而过，失重感直接压满画面。</td>
+              <td>音色：低频、有速度压迫感的年轻英文运动旁白，短句、干净、像运动品牌片预告。"Drop now."</td>
+              <td>环境声：舱门风压、高空风噪爆开；动作音效：手套脱离舱门、身体冲出瞬间的低频冲击；BGM：一记重鼓点直接进入</td>
+            </tr>
+            <tr class="sky-row">
+              <td class="shot">镜头 2</td>
+              <td class="time">2-5秒</td>
+              <td>跳伞 POV 近景到第三人称空中追随中远景</td>
+              <td>头盔 POV 向下俯冲，快速切到侧后方第三人称追随镜头，镜头像无人机贴着主角轨迹滑行，穿过云边时产生明显速度模糊</td>
+              <td>用 3 秒建立垂直速度、海面位置和“人像游戏角色一样掌控下坠轨迹”的超现实运动规则，为云层转海浪提供空间来源，不拖慢节奏</td>
+              <td>头盔 POV 中，主角双臂张开向下俯冲，云层从画面边缘高速后退，下方海岸线越来越近。切到侧后方追随镜头，主角像被一条看不见的滑行轨道牵引，身体在空中做出干净的压低、转向、加速动作；护目镜反射出金色阳光，白色云带在前方像一道即将撞上的浪墙。镜头边缘的云影被拉成长条，中心人物和护目镜保持清晰，形成“真实风景 + 不可能运动”的 AI 极限感。</td>
+              <td>音色：低频、有速度压迫感的年轻英文运动旁白，短句、干净、像运动品牌片预告。"Aim for the blue."</td>
+              <td>环境声：高速风噪、衣料震动；动作音效：身体调整姿态时的风切声；BGM：鼓点加密，合成器上扬</td>
+            </tr>
+            <tr class="transition-row">
+              <td class="shot">镜头 3</td>
+              <td class="time">5-17秒</td>
+              <td>云层白场近景、冲浪板 POV 近景、水面第三人称跟拍中景、无人机远景、巨浪低机位近景组合</td>
+              <td>无缝转场加完整冲浪长运动镜头：镜头冲进厚白云层，云雾颗粒渐变为浪花泡沫；板头 POV 接住划水入浪，切水面侧后方追随起乘，再切无人机斜俯拍巨浪压近，最后用低机位贴浪墙和板头 POV 冲出白水</td>
+              <td>第三镜承担全片完整冲浪过程，不把冲浪动作遗留到后续镜头。前段用白场、同方向翻滚、手臂动作匹配和白色颗粒质感渐变完成跳伞到冲浪的超现实转场；中段用 POV 和第三人称追随建立起乘速度；后段用无人机和低机位证明巨浪尺度，最后以冲出白水结束运动高潮</td>
+              <td>5-7秒，主角俯冲进厚白云层，画面被云雾包住，镜头继续同方向翻滚，云雾颗粒逐渐变湿，白色云团边缘像浪花一样碎裂。7-9秒，画面从白场冲出，镜头已经贴在浅蓝白色冲浪板板头，主角双手快速划水，水珠打满镜头，刚才的下坠速度被接成板头破水前冲，像从天空赛道直接滑入海面赛道。9-11秒，水面侧后方追随镜头贴着浪面滑行，主角借浪加速起身，脚步踩到冲浪板中心线，身体压低转向，路面式的运动模糊转化为水面拖影，远处水面颜色突然变深。11-14秒，无人机斜俯拍，蓝绿色巨浪像弧形水墙从外海推向近岸，主角沿浪肩高速滑出夸张弧线，身体姿态接近游戏角色的极限压弯，但冲浪板、水流方向和浪肩位置保持连贯。14-17秒，低机位贴着巨浪墙，水墙从画面右侧高高竖起，白色浪头在画面边缘拖成速度残影；主角压低重心贴浪脚转向，最后切回板头 POV，厚白浪从身后追上，板头冲破白水，前方通透海面和高亮蓝天突然打开，完整冲浪过程在本镜结束。</td>
+              <td>音色：低频、有速度压迫感的年轻英文运动旁白，短句、干净、像运动品牌片预告。"Sky turns to water. Break through."</td>
+              <td>环境声：高空风噪无缝混入浪花贴镜声、贴近水面的浪声、风声、巨浪低频轰鸣；动作音效：云层白场中的低频冲击、板头切水、手臂划水、板底切水、巨浪墙拍过镜头、水雾冲刷；BGM：半拍抽空后重击落回节奏，鼓点、电吉他和低频合成器进入峰值</td>
+            </tr>
+            <tr class="highlight">
+              <td class="shot">镜头 4</td>
+              <td class="time">17-21秒</td>
+              <td>水边中景到手机近景，再到人物半侧近景</td>
+              <td>从冲出白水后的水边跟拍接住主角抱板走上海滩；镜头从高速贴水状态逐渐减速，跟随脚步越过湿沙和冲浪板，落到沙滩布上的手机，手机响起后主角伸手接起</td>
+              <td>第四镜先给一个“从海里走回沙滩”的落地动作，把前面夸张运动慢慢收回现实空间，避免冲浪到电话的硬切。手机铃声在主角接近沙滩工作位时出现，让反转从空间动作里自然发生</td>
+              <td>17-18.5秒，主角抱着冲浪板从浅水区走上湿沙，脚边海水退去，刚才巨浪的白色泡沫还在身后翻涌。镜头保留一点刚才的速度惯性，低位贴着湿沙滑行，水珠和沙粒从画面边缘甩过。18.5-19.5秒，镜头跟着脚步向沙滩布移动，速度明显放慢，平板/电脑和手机进入画面，现实物件的稳定构图把前面的超现实运动拉回生活场景，手机铃声响起。19.5-21秒，主角放下冲浪板，伸手接起手机。电话那头催促：“图片怎么还没做好？”主角停顿一下，目光从海面转回平板/电脑。</td>
+              <td>电话那头客户音色：急促、现实、带催促感的中文电话声。“图片怎么还没做好？”主角无声。</td>
+              <td>环境声：傍晚海浪、风声、脚步踩过湿沙；道具声：冲浪板放到沙上的轻响、手机铃声、接通提示音；BGM：从冲浪峰值快速抽离，只留海声和电话声</td>
+            </tr>
+            <tr class="finish">
+              <td class="shot">镜头 5</td>
+              <td class="time">21-23秒</td>
+              <td>沙滩背影中景到固定远中景</td>
+              <td>主角放下手机，镜头轻轻退到背后固定构图，让人物背面、夕阳、海水、沙滩、冲浪板和平板/电脑同时成立</td>
+              <td>第五镜只做 ending 定格，不再增加新动作。两秒内用背影和继续工作的手部动作收住反转，让前面的极限运动变成设计师脑内创意影像的余韵</td>
+              <td>主角把手机放到一旁，重新面对平板/电脑继续干活。镜头停在人物背面：夕阳压在海平线，海水反光，沙滩被染成金色，冲浪板靠在身边。前面高饱和、高速度的画面在这里完全静下来，ending 画面安静停住。</td>
+              <td>（无声）</td>
+              <td>环境声：傍晚海浪、风声；道具声：手机放下的轻响、平板/电脑触控声；BGM：（无）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>首帧图</h2>
+      <div class="frames">
+        <article class="frame-card">
+          <img src="shot-01-plane-door-hook.png" alt="镜头 1 首帧">
+          <div class="frame-body">
+            <h3>镜头 1｜机舱冲出强 Hook</h3>
+            <p>通透日光、高空海岸、超广角翻转与速度拖影。</p>
+          </div>
+        </article>
+        <article class="frame-card">
+          <img src="shot-02-sky-chase.png" alt="镜头 2 首帧">
+          <div class="frame-body">
+            <h3>镜头 2｜空中追随俯冲</h3>
+            <p>第三人称追随镜头，蓝天、云层和海岸纵深保持清澈。</p>
+          </div>
+        </article>
+        <article class="frame-card">
+          <img src="shot-03-wave-breakthrough.png" alt="镜头 3 首帧">
+          <div class="frame-body">
+            <h3>镜头 3｜巨浪冲浪高潮</h3>
+            <p>蓝绿色浪墙、板头 POV 和水花速度感，无夕阳色。</p>
+          </div>
+        </article>
+        <article class="frame-card">
+          <img src="shot-04-phone-reality.png" alt="镜头 4 首帧">
+          <div class="frame-body">
+            <h3>镜头 4｜手机接入现实</h3>
+            <p>夕阳沙滩、手机和电脑工作位进入画面，完成反转触发。</p>
+          </div>
+        </article>
+        <article class="frame-card">
+          <img src="shot-05-sunset-work.png" alt="镜头 5 首帧">
+          <div class="frame-body">
+            <h3>镜头 5｜夕阳背影收束</h3>
+            <p>人物背对海面继续工作，手机放在一旁，冲浪板形成记忆点。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="analysis">
+      <h2>设计解析</h2>
+      <ul>
+        <li>景别逻辑：第一镜用机舱边缘 POV 和超广角高空翻转远景在 2 秒内制造强 hook；第二镜用跳伞 POV 与第三人称空中追随镜头建立垂直速度和游戏化运动规则；第三镜集中完成云层白场转浪花泡沫、冲浪板 POV、水面第三人称跟拍、无人机巨浪和低机位冲出白水；第四镜从水边中景过渡到手机近景和人物半侧近景，让电话反转从走上沙滩的动作里发生；第五镜用沙滩背影中景完成 ending 定格。</li>
+        <li>运镜逻辑：全片速度方向从向下坠落转为向前冲刺。镜头语言借鉴 AI 极限运动短视频：超广角畸变负责空间落差，第三人称追随负责游戏感，边缘运动模糊负责速度，中心人物相对清晰负责动作可读性。无缝转场依靠同方向翻滚、白色遮挡、手部动作匹配和云雾/泡沫纹理渐变完成，让跳伞和冲浪像同一个超现实动作的两个阶段。</li>
+        <li>超现实运动逻辑：前 17 秒允许“真实风景 + 不可能动作”的 AI 动画感，但每次夸张都保留连续依据：跳伞轨迹指向海面，云层白场提供转场遮挡，云雾颗粒变成浪花泡沫，主角手臂划水接住下坠速度，冲浪板沿浪肩和浪脚运动。观众可以感到物理不寻常，但不会觉得画面随机跳变。</li>
+        <li>物理世界连续性：前 17 秒是设计师脑中的创意影像或正在构思的广告片段，因此跳伞到冲浪依靠剪辑匹配成立；17 秒后通过主角抱板走上沙滩，把运动影像自然落回现实工作位，手机、平板/电脑、冲浪板和夕阳共同交代身份与状态。</li>
+        <li>分镜连续性：主角先从飞机跃出，穿过云层，第三镜完整完成白场转冲浪、借浪起乘、巨浪压近、贴浪墙加速和冲出白水；第四镜通过走上沙滩接到电话完成现实反转；第五镜主角放下手机继续工作，完成“极限大片是设计师脑内创作”的反转闭环。</li>
+        <li>声音逻辑：高空风噪在第三镜混入浪声，BGM 在白场处半拍抽空后重击回落，并在巨浪冲出时进入峰值；第四镜从脚步湿沙声过渡到手机铃声和客户电话，反转更自然；第五镜撤掉音乐，只留海声和轻微工作声，让 ending 安静收住。</li>
+        <li>记忆点：用跳伞强 hook、游戏电影感追随镜头和第三镜完整巨浪冲浪把速度拉满，再让主角抱板走上沙滩接到一句“图片怎么还没做好？”，最后把夏日激情、AI 极限幻想和打工现实落在同一个夕阳沙滩背影里。</li>
+      </ul>
+    </section>
+
+    <footer>
+      产出文件：outputs/2026-06-15-skydive-surf-speed/storyboard.md ｜ outputs/2026-06-15-skydive-surf-speed/storyboard.html
+    </footer>
+  </main>
+</body>
+</html>
