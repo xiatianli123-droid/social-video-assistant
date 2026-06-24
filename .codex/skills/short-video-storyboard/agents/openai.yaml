@@ -1,4 +1,4 @@
 interface:
   display_name: "Short Video Storyboard"
-  short_description: "Write storyboard scripts and HTML handoff."
-  default_prompt: "Write a short-video storyboard script, generate HTML delivery, then ask whether first-frame images are needed."
+  short_description: "Write fixed-format storyboard scripts and HTML."
+  default_prompt: "Use $short-video-storyboard to write a fixed-format short-video storyboard with story core, per-shot blocks, HTML delivery, and first-frame confirmation."

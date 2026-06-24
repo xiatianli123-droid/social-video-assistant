@@ -4,6 +4,20 @@ This file stores dated workflow summaries for version management. When a project
 
 ## 2026-06-24
 
+### Storyboard Skill Format Hardening
+
+- Project directory: `H:\TVC`.
+- Key rule or asset changes:
+  - Investigated why a collaborator's generated storyboard collapsed into a short summary table instead of the project-standard per-shot block format.
+  - Found that the strict `故事核心` and per-shot block rules were present in `AGENTS.md`, `README.md`, and `docs/storyboard-workflow.md`, but were not hard enough inside the published `short-video-storyboard` skill itself.
+  - Updated `.codex/skills/short-video-storyboard/SKILL.md` to require `故事核心`, forbid wide Markdown tables/four-column summary tables, enforce fixed shot-field order, require cumulative time ranges, and require fuller per-shot execution detail.
+  - Updated `references/storyboard-template.md` with the same fixed-format guardrails and refreshed `agents/openai.yaml` so the default prompt explicitly invokes `$short-video-storyboard`.
+  - Removed the outdated Chinese six-question intake block from `short-video-storyboard` and its template reference. Incomplete briefs now route only through `outputs/storyboard-brief-selector.html` unless the user explicitly asks to use defaults.
+  - Split the detailed Hook review mechanism out of `SKILL.md` into `references/hook-review.md`; `SKILL.md` now only indexes the reference and requires each completed Hook review/rewrite to append a compact new case to that reference file.
+  - Added maintenance rules to `references/hook-review.md`: organize once `新增案例库` exceeds 20 entries, keep only 3-5 representative cases per Hook problem type, promote repeated lessons into rules, and archive old history only when needed.
+- Current output status: `short-video-storyboard` validates successfully with the skill creator `quick_validate.py` script in UTF-8 mode.
+- Next required step: commit and push the skill hardening changes so collaborators receive the stricter format rules.
+
 ### Git Packaging And Skill Cleanup
 
 - Project directory: `H:\TVC`.

@@ -4,10 +4,18 @@
 
 - 问题：早期分镜存在钩子偏弱或旧标准写法，主要表现为开场只建立氛围/环境，缺少异常、冲突、反差或强信息缺口。
 - 影响：短视频前 0.5-3 秒停留理由不足，广告卖点虽完整但滑动平台吸引力偏弱。
-- 状态：已识别，已在 short-video-storyboard skill 中加入内部 Hook 审查机制，尚未改稿。
+- 状态：已识别，Hook 审查机制已从 `SKILL.md` 拆到 `references/hook-review.md`，尚未改稿。
 - 下一步：如继续处理，优先修订 outputs/2026-05-14-string-lights、outputs/2026-05-15-fengshan-deng、outputs/2026-05-15-downlight 的镜头 1 和故事核心。
 
 ## Risks
+
+- 风险：发布后的协作者环境只触发项目 skill，但没有完整加载项目级 `AGENTS.md` / `README.md` / `docs/storyboard-workflow.md`，导致分镜输出退化成简短摘要表。
+- 触发条件：格式硬规则只写在项目文档里，`short-video-storyboard` 的 `SKILL.md` 和模板引用没有明确禁止宽表/四列摘要表，也没有把 `故事核心`、逐镜头块、累计时间段写成必选。
+- 缓解方式：2026-06-24 已把这些硬规则同步进 `short-video-storyboard` 的 `SKILL.md`、`references/storyboard-template.md` 和 `agents/openai.yaml`；后续发布前优先检查 skill 本体是否包含关键交付约束。
+
+- 风险：旧版文字问卷残留在发布 skill 中，协作者看到后可能绕过共享 brief 面板。
+- 触发条件：`short-video-storyboard` 的 `SKILL.md` 或 `references/storyboard-template.md` 保留“默认中文问卷 / 生成前提问卡 / 先问 6 个问题”等旧内容。
+- 缓解方式：2026-06-24 已删除旧中文问卷和模板提问卡，改为 brief 不完整时统一打开 `outputs/storyboard-brief-selector.html` 并等待用户发回生成简报。
 
 - 风险：只在 skill 中写“强 hook”但不要求每个镜头声明广告功能，后续脚本可能又回到慢铺垫。
 - 触发条件：用户只给产品名或泛生活方式方向，且未强制首镜动作化。
@@ -23,6 +31,10 @@
 
 ## Resolved
 
+- 已解决事项：2026-06-24 已修正 `short-video-storyboard` 发布后格式约束偏软的问题：skill 本体现在要求 `故事核心`、逐镜头块、固定字段顺序、累计时间段、禁止四列摘要表和更完整的单镜执行信息；模板引用和 `agents/openai.yaml` 已同步。
+- 已解决事项：2026-06-24 已移除 `short-video-storyboard` 中过时的“默认中文问卷”和模板“生成前提问卡”，brief 不完整时统一使用共享 brief 面板。
+- 已解决事项：2026-06-24 已把 Hook 审查细则从 `short-video-storyboard/SKILL.md` 拆到 `references/hook-review.md`；`SKILL.md` 只保留索引，并要求每次 Hook 审查或改写后追加新案例到该 reference。
+- 已解决事项：2026-06-24 已为 `references/hook-review.md` 增加案例库维护规则：超过 20 条整理、每类最多 3-5 条代表案例、重复经验提炼进规则、历史材料按需归档。
 - 已解决事项：本轮完成 9 份既有 storyboard.md 的钩子落实度审查；已将“四问不外显、只输出画面内容”的 hook 审查机制固化进 short-video-storyboard skill。
 - 已解决事项：2026-06-23 已把首帧图默认开启子 agent 视觉 QA、产品参考存在时才做产品跨分镜大小比例和参考图结构一致性审查、无产品参考时只审首帧规则、候选先审后替换、局部失败优先 edit、交付目录清理失败候选的方法同步进 `storyboard-first-frame-images` 和 `docs/storyboard-workflow.md`。
 - 已解决事项：2026-06-23 已把共享 brief 面板从偏运营项重构为社媒创意导向，新增开头钩子、内容结构、留存节奏、转场技巧、拍摄技巧、声音与包装，并要求 brief 先给社媒创意建议再写分镜，降低后续输入只停留在类目/受众/情绪标签的风险。
