@@ -31,6 +31,7 @@
 
 ```text
 H:\TVC
+├── .codex\skills\aig-image-gen\                  # 实际图片生成/编辑 CLI
 ├── .codex\skills\short-video-storyboard\          # 分镜脚本、连续性检查
 ├── .codex\skills\storyboard-html-delivery\        # storyboard.html 交付
 ├── .codex\skills\storyboard-first-frame-images\   # 用户确认后的首帧图片生成

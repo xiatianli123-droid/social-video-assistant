@@ -13,6 +13,7 @@ This file stores dated workflow summaries for version management. When a project
   - Migrated media assets (`*.png`, `*.jpg`, `*.mp4`, `*.mp3`, `*.wav`) to Git LFS before publishing so large storyboard assets upload reliably.
   - Removed `.codex/skills/seedance-video/` because video-generation work is no longer part of this project; the active workflow ends after storyboard, HTML delivery, and optional first-frame image generation/review.
   - Confirmed the project-local active skills remain `short-video-storyboard`, `storyboard-html-delivery`, and `storyboard-first-frame-images`.
+  - Added project-local `aig-image-gen` support skill so first-frame generation has its required AIG/Joinin GPT Image CLI in the repository; runtime credentials still come from each user's local Codex auth/config.
 - Current output status: public GitHub repository created and `main` pushed to `https://github.com/xiatianli123-droid/social-video-assistant.git`.
 - Next required step: collaborators should clone the repository with Git LFS installed so media assets download correctly.
 

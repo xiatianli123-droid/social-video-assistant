@@ -10,6 +10,8 @@ The storyboard workflow is split into three project skills:
 - `storyboard-html-delivery`: creates or updates the final `storyboard.html`. HTML delivery is required whether first-frame images are generated or not.
 - `storyboard-first-frame-images`: orchestrates first-frame continuity only after the user confirms they need images. It first creates a character reference sheet and a scene concept reference, then uses only those two images as inputs for every storyboard shot; it uses `aig-image-gen` for actual raster generation or editing.
 
+The repository also includes the supporting project skill `aig-image-gen`, which provides the AIG/Joinin GPT Image CLI used by `storyboard-first-frame-images`. It reads credentials from each user's local Codex auth/config files; no API keys are stored in this repository.
+
 ## How To Use
 
 1. Start with a product brief. If the user gives only a product name or an incomplete brief, automatically open `outputs/storyboard-brief-selector.html`, ask the user to send back the generated brief, and stop before writing any storyboard or HTML.
@@ -54,6 +56,7 @@ The storyboard workflow is split into three project skills:
 
 ```text
 H:\TVC
+├── .codex\skills\aig-image-gen\
 ├── .codex\skills\short-video-storyboard\
 ├── .codex\skills\storyboard-html-delivery\
 ├── .codex\skills\storyboard-first-frame-images\

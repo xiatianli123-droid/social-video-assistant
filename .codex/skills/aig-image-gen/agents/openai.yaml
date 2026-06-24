@@ -1,0 +1,4 @@
+interface:
+  display_name: "AIG Image Gen"
+  short_description: "Generate and edit images with the AIG CLI"
+  default_prompt: "Use $aig-image-gen to generate an image from this prompt."
