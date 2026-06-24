@@ -12,8 +12,8 @@ This file stores dated workflow summaries for version management. When a project
   - Added a root `.gitignore` for local temporary files, caches, editor metadata, and environment secrets.
   - Removed `.codex/skills/seedance-video/` because video-generation work is no longer part of this project; the active workflow ends after storyboard, HTML delivery, and optional first-frame image generation/review.
   - Confirmed the project-local active skills remain `short-video-storyboard`, `storyboard-html-delivery`, and `storyboard-first-frame-images`.
-- Current output status: local repository is ready for a remote `origin`; no remote URL has been configured yet.
-- Next required step: create an empty remote repository, add it as `origin`, and push `main`.
+- Current output status: public GitHub repository created at `https://github.com/xiatianli123-droid/social-video-assistant.git`; local repository is ready to push.
+- Next required step: add the remote as `origin` and push `main`.
 
 ## 2026-06-23
 
