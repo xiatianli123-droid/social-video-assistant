@@ -10,10 +10,11 @@ This file stores dated workflow summaries for version management. When a project
 - Key rule or asset changes:
   - Initialized the workspace as a Git repository on `main` and created the initial project commit.
   - Added a root `.gitignore` for local temporary files, caches, editor metadata, and environment secrets.
+  - Migrated media assets (`*.png`, `*.jpg`, `*.mp4`, `*.mp3`, `*.wav`) to Git LFS before publishing so large storyboard assets upload reliably.
   - Removed `.codex/skills/seedance-video/` because video-generation work is no longer part of this project; the active workflow ends after storyboard, HTML delivery, and optional first-frame image generation/review.
   - Confirmed the project-local active skills remain `short-video-storyboard`, `storyboard-html-delivery`, and `storyboard-first-frame-images`.
-- Current output status: public GitHub repository created at `https://github.com/xiatianli123-droid/social-video-assistant.git`; local repository is ready to push.
-- Next required step: add the remote as `origin` and push `main`.
+- Current output status: public GitHub repository created and `main` pushed to `https://github.com/xiatianli123-droid/social-video-assistant.git`.
+- Next required step: collaborators should clone the repository with Git LFS installed so media assets download correctly.
 
 ## 2026-06-23
 
